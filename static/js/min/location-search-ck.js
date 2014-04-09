@@ -1,0 +1,1 @@
+$("#locator-form").submit(function(e){$(this).after("<div class='results'>loading...</div>"),$.getJSON("http://locator.aids.gov/data?callback=?",{zip:"91381"}).done(function(e){$.each(e.services,function(e,o){console.log(o.serviceType)}),console.log("JSON Data: "+e.services[1].title)}).fail(function(e,o,t){var a=o+", "+t;console.log("Request Failed: "+a)}),e.preventDefault()});
